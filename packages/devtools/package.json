@@ -1,0 +1,25 @@
+{
+    "name": "@infer-aria/devtools",
+    "version": "0.1.0",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "sideEffects": false,
+    "license": "MIT",
+    "files": [
+        "dist/**"
+    ],
+    "scripts": {
+        "build": "tsup src/index.ts --format esm,cjs --dts",
+        "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+        "lint": "eslint src/**/*.ts",
+        "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@infer-aria/core": "workspace:*"
+    },
+    "devDependencies": {
+        "tsup": "^8.0.1"
+    }
+}
